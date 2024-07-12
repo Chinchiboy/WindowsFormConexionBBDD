@@ -57,7 +57,7 @@ namespace WindowsFormConexionBBDD
 
             try
             {
-                string sql = "SELECT * FROM Jobs";
+                string sql = "SELECT job_id, job_title, min_salary, max_salary FROM Jobs";
 
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
@@ -69,9 +69,10 @@ namespace WindowsFormConexionBBDD
                             {
                                 Job_id = reader.GetInt32(reader.GetOrdinal("job_id")),
                                 Job_title = reader.GetString(reader.GetOrdinal("job_title")),
-                                Min_salary = reader.GetDouble(reader.GetOrdinal("min_salary")),
-                                Max_salary = reader.GetDouble(reader.GetOrdinal("max_salary"))
+                                Min_salary = reader.GetDecimal(reader.GetOrdinal("min_salary")),
+                                Max_salary = reader.GetDecimal(reader.GetOrdinal("max_salary"))
                             };
+
                             jobs.Add(job);
                         }
                     }
@@ -88,5 +89,7 @@ namespace WindowsFormConexionBBDD
 
             return jobs;
         }
+
+
     }
 }

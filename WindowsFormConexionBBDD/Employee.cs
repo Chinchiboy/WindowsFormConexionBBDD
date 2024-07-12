@@ -15,13 +15,13 @@ namespace WindowsFormConexionBBDD
         public string Phone_number { get; set; }
         public DateTime Hire_date { get; set; }
         public int Job_id { get; set; }
-        public double Salary { get; set; }
-        public int Manager_id { get; set; }
-        public int Department_id { get; set; }
+        public decimal Salary { get; set; }
+        public int? Manager_id { get; set; }
+        public int? Department_id { get; set; }
 
         public Employee() { }
 
-        public Employee(int employee_id, string first_name, string last_name, string email, string phone_number, DateTime hire_date, int job_id, double salary, int manager_id, int department_id)
+        public Employee(int employee_id, string first_name, string last_name, string email, string phone_number, DateTime hire_date, int job_id, decimal salary, int manager_id, int department_id)
         {
             Employee_id = employee_id;
             First_name = first_name;
@@ -33,6 +33,11 @@ namespace WindowsFormConexionBBDD
             Salary = salary;
             Manager_id = manager_id;
             Department_id = department_id;
+        }
+
+        public string FullName
+        {
+            get { return $"{First_name} {Last_name}"; }
         }
     }
 }

@@ -6,6 +6,9 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.ComboBox comboBoxTrabajo;
+        private System.Windows.Forms.ComboBox comboBoxManager;
+        private System.Windows.Forms.ComboBox comboBoxDepartamento;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -45,6 +48,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.anadirEmployee = new System.Windows.Forms.Button();
             this.dateTimeContratacion = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxTrabajo = new System.Windows.Forms.ComboBox();
+            this.comboBoxManager = new System.Windows.Forms.ComboBox();
+            this.comboBoxDepartamento = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -122,10 +128,10 @@
             // 
             // textBoxTrabajo
             // 
-            this.textBoxTrabajo.Location = new System.Drawing.Point(166, 182);
+            this.textBoxTrabajo.Location = new System.Drawing.Point(0, 0);
             this.textBoxTrabajo.Name = "textBoxTrabajo";
             this.textBoxTrabajo.Size = new System.Drawing.Size(100, 20);
-            this.textBoxTrabajo.TabIndex = 11;
+            this.textBoxTrabajo.TabIndex = 22;
             // 
             // label6
             // 
@@ -154,10 +160,10 @@
             // 
             // textBoxManager
             // 
-            this.textBoxManager.Location = new System.Drawing.Point(320, 117);
+            this.textBoxManager.Location = new System.Drawing.Point(0, 0);
             this.textBoxManager.Name = "textBoxManager";
             this.textBoxManager.Size = new System.Drawing.Size(100, 20);
-            this.textBoxManager.TabIndex = 15;
+            this.textBoxManager.TabIndex = 21;
             // 
             // label8
             // 
@@ -170,10 +176,10 @@
             // 
             // textBoxDepartamento
             // 
-            this.textBoxDepartamento.Location = new System.Drawing.Point(320, 182);
+            this.textBoxDepartamento.Location = new System.Drawing.Point(0, 0);
             this.textBoxDepartamento.Name = "textBoxDepartamento";
             this.textBoxDepartamento.Size = new System.Drawing.Size(100, 20);
-            this.textBoxDepartamento.TabIndex = 17;
+            this.textBoxDepartamento.TabIndex = 20;
             // 
             // label9
             // 
@@ -201,11 +207,38 @@
             this.dateTimeContratacion.Size = new System.Drawing.Size(111, 20);
             this.dateTimeContratacion.TabIndex = 19;
             // 
-            // Form2
+            // comboBoxTrabajo
+            // 
+            this.comboBoxTrabajo.FormattingEnabled = true;
+            this.comboBoxTrabajo.Location = new System.Drawing.Point(166, 182);
+            this.comboBoxTrabajo.Name = "comboBoxTrabajo";
+            this.comboBoxTrabajo.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTrabajo.TabIndex = 11;
+            // 
+            // comboBoxManager
+            // 
+            this.comboBoxManager.FormattingEnabled = true;
+            this.comboBoxManager.Location = new System.Drawing.Point(320, 117);
+            this.comboBoxManager.Name = "comboBoxManager";
+            this.comboBoxManager.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxManager.TabIndex = 15;
+            // 
+            // comboBoxDepartamento
+            // 
+            this.comboBoxDepartamento.FormattingEnabled = true;
+            this.comboBoxDepartamento.Location = new System.Drawing.Point(320, 182);
+            this.comboBoxDepartamento.Name = "comboBoxDepartamento";
+            this.comboBoxDepartamento.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDepartamento.TabIndex = 17;
+            // 
+            // FormAnadirEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBoxTrabajo);
+            this.Controls.Add(this.comboBoxManager);
+            this.Controls.Add(this.comboBoxDepartamento);
             this.Controls.Add(this.dateTimeContratacion);
             this.Controls.Add(this.anadirEmployee);
             this.Controls.Add(this.textBoxDepartamento);
@@ -225,7 +258,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxNombre);
             this.Controls.Add(this.label1);
-            this.Name = "Form2";
+            this.Name = "FormAnadirEmployee";
             this.Text = "Form2";
             this.ResumeLayout(false);
             this.PerformLayout();

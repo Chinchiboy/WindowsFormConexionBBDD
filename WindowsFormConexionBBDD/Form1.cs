@@ -37,5 +37,23 @@ namespace WindowsFormConexionBBDD
             FormAnadirJob f = new FormAnadirJob();
             f.ShowDialog();
         }
+
+        private void buttonVerEmpleados_Click(object sender, EventArgs e)
+        {
+            FormVer f = new FormVer();
+            f.ShowDialog();
+        }
+
+        private void buttonVerDepts_Click(object sender, EventArgs e)
+        {
+            FormVer f = new FormVer();
+            f.ShowDialog();
+        }
+
+        private void buttonVerTrabajo_Click(object sender, EventArgs e)
+        {
+            FormVer f = new FormVer();
+            f.ShowDialog();
+        }
     }
 }

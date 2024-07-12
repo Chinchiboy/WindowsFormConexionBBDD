@@ -17,23 +17,19 @@ namespace WindowsFormConexionBBDD
         {
             try
             {
-                // Capturar los datos de los campos de entrada
                 Job job = new Job
                 {
                     Job_title = textBoxTrabajo.Text,
-                    Min_salary = double.Parse(textBoxSalMin.Text),
-                    Max_salary = double.Parse(textBoxSalMax.Text)
+                    Min_salary = decimal.Parse(textBoxSalMin.Text),
+                    Max_salary = decimal.Parse(textBoxSalMax.Text)
                 };
 
-                // Insertar el trabajo en la base de datos
                 daljob.Insert(job);
 
-                // Mostrar un mensaje de éxito
                 MessageBox.Show("Trabajo añadido correctamente.");
             }
             catch (Exception ex)
             {
-                // Mostrar un mensaje de error en caso de que ocurra una excepción
                 MessageBox.Show("Error al añadir trabajo: " + ex.Message);
             }
         }

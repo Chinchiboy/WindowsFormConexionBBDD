@@ -76,6 +76,12 @@
     <Compile Include="FormAnadirJob.Designer.cs">
       <DependentUpon>FormAnadirJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVer.Designer.cs">
+      <DependentUpon>FormVer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Job.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAnadirJob.resx">
       <DependentUpon>FormAnadirJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVer.resx">
+      <DependentUpon>FormVer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

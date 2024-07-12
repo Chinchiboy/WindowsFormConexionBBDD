@@ -79,7 +79,7 @@ namespace WindowsFormConexionBBDD
                                 Phone_number = reader.GetString(reader.GetOrdinal("phone_number")),
                                 Hire_date = reader.GetDateTime(reader.GetOrdinal("hire_date")),
                                 Job_id = reader.GetInt32(reader.GetOrdinal("job_id")),
-                                Salary = reader.GetDouble(reader.GetOrdinal("salary")),
+                                Salary = reader.GetDecimal(reader.GetOrdinal("salary")),
                                 Manager_id = reader.GetInt32(reader.GetOrdinal("manager_id")),
                                 Department_id = reader.GetInt32(reader.GetOrdinal("department_id"))
                             };
@@ -99,5 +99,49 @@ namespace WindowsFormConexionBBDD
 
             return employees;
         }
+
+        public List<Employee> SelectManager()
+        {
+            SqlConnection connection = DBConnection.GetConnection();
+            List<Employee> employees = new List<Employee>();
+
+            if (connection == null)
+            {
+                MessageBox.Show("Error al establecer la conexión con la base de datos.");
+                return employees;
+            }
+
+            try
+            {
+                string sql = "SELECT employee_id, first_name, last_name FROM Employees";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Employee employee = new Employee();
+
+                            employee.Employee_id = reader.IsDBNull(reader.GetOrdinal("employee_id")) ? 0 : reader.GetInt32(reader.GetOrdinal("employee_id"));
+                            employee.First_name = reader.IsDBNull(reader.GetOrdinal("first_name")) ? string.Empty : reader.GetString(reader.GetOrdinal("first_name"));
+                            employee.Last_name = reader.IsDBNull(reader.GetOrdinal("last_name")) ? string.Empty : reader.GetString(reader.GetOrdinal("last_name"));
+
+                            employees.Add(employee);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener empleados: " + ex.Message);
+            }
+            finally
+            {
+                DBConnection.CloseConnection();
+            }
+            return employees;
+        }
+
     }
 }
